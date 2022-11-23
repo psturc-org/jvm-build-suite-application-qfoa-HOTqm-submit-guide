@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    appstudio.openshift.io/application: jvm-build-suite-application-qfoa
+    appstudio.openshift.io/component: jvm-build-suite-component-mluv
+    build.appstudio.openshift.io/build: "true"
+    build.appstudio.openshift.io/type: build
+    build.appstudio.openshift.io/version: "0.1"
+    pipelines.appstudio.openshift.io/type: build
+  creationTimestamp: null
+  name: eljvm-build-suite-component-mluv
+  namespace: jvm-build-nkvu
+spec:
+  path: /
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: el-jvm-build-suite-component-mluv
+    weight: null
+status: {}
